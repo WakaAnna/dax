@@ -1,0 +1,11 @@
+Значение = IF(
+    HASONEVALUE('Таблица'[Метрика]);
+    SWITCH(
+        VALUES('Таблица'[Индекс]);
+        1; SUM('v_semantics_group'[%ТОП3]);
+        2; SUM('v_semantics_group'[%ТОП5]);     
+        3; SUM('v_semantics_group'[%ТОП10]); 
+        4; SUM('v_semantics_group'[%"WS"10]); 
+        5; SUM('v_semantics_group'[%Ptraf]
+        )  
+)  )
